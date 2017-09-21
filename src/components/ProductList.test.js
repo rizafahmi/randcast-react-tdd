@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 import ProductList from './ProductList'
 
 test('should render <ProductList />', () => {
-  const wrapper = shallow(<ProductList />)
+  const wrapper = shallow(<ProductList products={[]} />)
   expect(wrapper).toBeDefined()
 })
 test('ProductList should have list of products as ul and li', () => {
