@@ -1,21 +1,25 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import ProductList from './components/ProductList'
 
 class App extends Component {
-  render() {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      products: [
+        { id: 1, name: 'AirMax 90', brand: 'Nike' },
+        { id: 2, name: 'Yeezy', brand: 'Adidas' },
+        { id: 3, name: 'Classic', brand: 'Reebok' }
+      ]
+    }
+  }
+  render () {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <ProductList products={this.state.products} />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
