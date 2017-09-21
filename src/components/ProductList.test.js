@@ -2,7 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 import ProductList from './ProductList'
 
-let mockProducts, wrapper
+let mockProducts, mockProductSelectFn, wrapper
 
 beforeEach(() => {
   mockProducts = [
@@ -10,8 +10,16 @@ beforeEach(() => {
     { id: 2, name: 'Mock product 2', brand: 'MockBrandB' },
     { id: 3, name: 'Mock product 3', brand: 'MockBrandC' }
   ]
+  mockProductSelectFn = product => {
+    console.log('You selected', product)
+  }
 
-  wrapper = shallow(<ProductList products={mockProducts} />)
+  wrapper = shallow(
+    <ProductList
+      products={mockProducts}
+      onProductSelect={mockProductSelectFn}
+    />
+  )
 })
 test('should render <ProductList />', () => {
   expect(wrapper).toBeDefined()
