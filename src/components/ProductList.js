@@ -6,7 +6,7 @@ const ProductList = props => (
     <h2>Product List</h2>
     <ul>
       {props.products &&
-        props.products.map(product => <li key={product.id}>{product.name}</li>)}
+        props.products.map(product => <li key={product.id}>{product.name} - {product.brand}</li>)}
     </ul>
   </div>
 )
