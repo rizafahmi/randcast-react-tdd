@@ -22,7 +22,9 @@
     "globals": [
       "test",
       "expect",
-      "beforeEach"
+      "beforeEach",
+      "afterEach",
+      "jest"
     ]
   }
 }

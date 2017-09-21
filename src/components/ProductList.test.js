@@ -10,16 +10,16 @@ beforeEach(() => {
     { id: 2, name: 'Mock product 2', brand: 'MockBrandB' },
     { id: 3, name: 'Mock product 3', brand: 'MockBrandC' }
   ]
-  mockProductSelectFn = product => {
-    console.log('You selected', product)
-  }
-
+  mockProductSelectFn = jest.fn()
   wrapper = shallow(
     <ProductList
       products={mockProducts}
       onProductSelect={mockProductSelectFn}
     />
   )
+})
+afterEach(() => {
+  mockProductSelectFn.mockReset()
 })
 test('should render <ProductList />', () => {
   expect(wrapper).toBeDefined()
@@ -34,4 +34,8 @@ test('ProductList should have product name', () => {
 test('ProductList should have brand name', () => {
   const lastElement = wrapper.find('li').last()
   expect(lastElement.contains(mockProducts[2].brand)).toEqual(true)
+})
+test('should call `props.onProductSelect` when user click product li', () => {
+  const firstElement = wrapper.find('li').first()
+  firstElement.simulate('click')
 })
