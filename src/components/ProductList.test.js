@@ -23,3 +23,7 @@ test('ProductList should have product name', () => {
   const firstElement = wrapper.find('li').first()
   expect(firstElement.contains(mockProducts[0].name)).toEqual(true)
 })
+test('ProductList should have brand name', () => {
+  const lastElement = wrapper.find('li').last()
+  expect(lastElement.contains(mockProducts[2].brand)).toEqual(true)
+})
