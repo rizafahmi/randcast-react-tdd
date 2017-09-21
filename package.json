@@ -21,7 +21,8 @@
   "standard": {
     "globals": [
       "test",
-      "expect"
+      "expect",
+      "beforeEach"
     ]
   }
 }
