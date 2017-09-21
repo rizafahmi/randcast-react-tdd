@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const ProductList = props => (
   <div>
-    <h2>Product List</h2>
+    <h2>New Product List</h2>
     <ul>
       {props.products &&
         props.products.map(product => (
