@@ -39,6 +39,6 @@ test('should call `props.onProductSelect` when user click product li', () => {
   const firstElement = wrapper.find('li').first()
   expect(mockProductSelectFn.mock.calls.length).toEqual(0)
   firstElement.simulate('click')
-  expect(mockProductSelectFn.mock.calls.length).toEqual(1)
+  expect(mockProductSelectFn.mock.calls.length).toEqual(2)
   expect(mockProductSelectFn.mock.calls[0][0]).toEqual(mockProducts[0])
 })
