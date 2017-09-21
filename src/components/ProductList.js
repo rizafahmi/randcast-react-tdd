@@ -6,13 +6,18 @@ const ProductList = props => (
     <h2>Product List</h2>
     <ul>
       {props.products &&
-        props.products.map(product => <li key={product.id}>{product.name} - {product.brand}</li>)}
+        props.products.map(product => (
+          <li key={product.id}>
+            {product.name} - {product.brand}
+          </li>
+        ))}
     </ul>
   </div>
 )
 
 ProductList.propTypes = {
-  products: PropTypes.array.isRequired
+  products: PropTypes.array.isRequired,
+  onProductSelect: PropTypes.func.isRequired
 }
 
 export default ProductList
