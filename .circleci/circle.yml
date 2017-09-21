@@ -1,8 +1,0 @@
-machine:
-  node:
-    version: 8.0.0
-test:
-  steps:
-    - run: npm test -- --coverage
-    - run: npm install -g codeclimate-test-reporter
-    - run: codeclimate-test-reporter < coverage/lcov.info
